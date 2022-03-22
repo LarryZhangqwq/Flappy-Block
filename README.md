@@ -1,5 +1,4 @@
 # Flappy-Block
-*****
 
 Hi !!:wave: Welcome to our game project "Flappy Block":icecream:
 
@@ -7,7 +6,6 @@ We are **Liu Yitao** and **Zhang Yuxiang** :nerd_face:
 
 Here are some introductions about our game:popcorn: Hope you can enjoy it! :beer:
 
-*****
 
 ## 1. Introduction
 
@@ -21,19 +19,23 @@ One day :cityscape: , a dog named  BAILEY :poodle: was caught in a factory:facto
 
   Players should control the box by using the magic of the box to pass through the gaps in the walls from left to right.
 
-  ————————————————>
+  ———————————————>
 
-  ｜            ｜             ｜              |        ......
+  :no_entry: :white_check_mark: :no_entry: :white_check_mark: :white_check_mark: :white_check_mark: :no_entry:......
 
-  ｜                             ｜              |        ......
+  :no_entry: :white_check_mark: :white_check_mark: :white_check_mark: :no_entry: :white_check_mark: :no_entry:......
 
-  ​    :package:        ｜                              |        ......
+  :package: :white_check_mark: :no_entry: :white_check_mark: :no_entry: :white_check_mark: :white_check_mark:......
 
-  ｜             ｜            ｜                       ......             
+  :no_entry: :white_check_mark: :no_entry: :white_check_mark: :no_entry: :white_check_mark: :no_entry:......             
 
-  ————————————————>
+  ———————————————>
+	
+	:no_entry: means the walls.
+	
+	:white_check_mark:: means the region that the box could stay.
 
-**1. 2: Magic of the box: **
+**1. 2: Magic of the box:**
 
 1. **Jump in the air**: Allow BAILEY to jump in the air. After air jump, the box will **raise by half a meter**.
 
