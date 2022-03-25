@@ -50,7 +50,7 @@ One day :cityscape: , a dog named  BAILEY :poodle: was caught in a factory:facto
 3. Using the space bar to control the jumping of the carton.
 4. Function that could control the movement of the box and print it out.
 5. Individual files to control the functions, including printing the box and walls, control the movement of box, random number generation, ranking the scores, etc.  ( Requirement 5 covered )
-6. Use data structures like array to store the game board and the wall position.
-7. Use dynamic memory to set up a ranking list(unknown length) for the history of scores. 
-8. Use file input to use the random wall position which is stored in another file; use file output to output the score to the ranking file for ranking.
+6. Use data structures like array to store the game board and the wall position. ( Requirement 2 covered )
+7. Use dynamic memory to set up a ranking list(unknown length) for the history of scores. ( Requirement 3 covered )
+8. Use file input to use the random wall position which is stored in another file; use file output to output the score to the ranking file for ranking. ( Requirement 4 covered )
 
