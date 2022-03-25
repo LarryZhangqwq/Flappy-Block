@@ -39,8 +39,6 @@ One day :cityscape: , a dog named  BAILEY :poodle: was caught in a factory:facto
 
 1. **Jump in the air**: Allow BAILEY to jump in the air. After air jump, the box will **raise by half a meter**.
 
-2. **Clean !!**: **Clear all obstacles** in the next five seconds.
-
    **Note:** This magic box hasn't solved gravity yet so the package will **fall freely** under the force of gravity.
 
    
@@ -49,9 +47,10 @@ One day :cityscape: , a dog named  BAILEY :poodle: was caught in a factory:facto
 
 1. Randomly generate the locations of the wall's gaps. ( Requirement 1 covered )
 2. Linearly increases walls movement speed.
-3. Using the keyboard to control the jumping of the carton and the second magic.
-4. Function that could achieve "Clean !!" magic.
-5. Function that could caluate the path of the box.
-6. Individual files to control the functions, including speed calculation, random number generation, archiving, etc.  ( Requirement 5 covered )
-7. Game interface that supports starting new games and loading archives.
-8. Archive function. Saving the status by saving some critical variables in a file. When loading the archive, the code will get the variables in the file as the input. ( Requirements 2, 4 covered )
+3. Using the space bar to control the jumping of the carton.
+4. Function that could control the movement of the box and print it out.
+5. Individual files to control the functions, including printing the box and walls, control the movement of box, random number generation, ranking the scores, etc.  ( Requirement 5 covered )
+6. Use data structures like array to store the game board and the wall position.
+7. Use dynamic memory to set up a ranking list(unknown length) for the history of scores. 
+8. Use file input to use the random wall position which is stored in another file; use file output to output the score to the ranking file for ranking.
+
