@@ -53,4 +53,5 @@ One day :cityscape: , a dog named  BAILEY :poodle: was caught in a factory:facto
 6. Use data structures like array to store the game board and the wall position. ( Requirement 2 covered )
 7. Use dynamic memory to set up a ranking list(unknown length) for the history of scores. ( Requirement 3 covered )
 8. Use file input to use the random wall position which is stored in another file; use file output to output the score to the ranking file for ranking. ( Requirement 4 covered )
+张宇翔哥哥好帅
 
