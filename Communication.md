@@ -27,13 +27,13 @@
 
 
 
-### 文件名以及其函数名称对应表格
+### 文件名以及其函数名称对应表格 + 对应用处
 
-| 函数名称以及其需要的变量                        | 文件名称                   |
-| :---------------------------------------------- | :------------------------- |
-| void ranklist_store( int rank_list[], int num ) | Ranklist_store_function.h  |
-|                                                 | Ranklist_create_function.h |
-|                                                 | Path_create_function.h     |
-|                                                 | Wall_create_function.h     |
-|                                                 |                            |
+| 函数名称以及其需要的变量          | 用途                                                    | 文件名称                    |
+| :-------------------------------- | ------------------------------------------------------- | :-------------------------- |
+| Int ranklist_process( int score ) | 读取+更新rank的txt文档并且return当前score的分数排名第几 | Ranklist_process_function.h |
+|                                   |                                                         | Ranklist_create_function.h  |
+|                                   |                                                         | Path_create_function.h      |
+|                                   |                                                         | Wall_create_function.h      |
+|                                   |                                                         |                             |
 
