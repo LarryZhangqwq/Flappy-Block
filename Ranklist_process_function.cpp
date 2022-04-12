@@ -1,14 +1,12 @@
 #include<iostream>
 #include<algorithm>
 #include<fstream>
-#include"Ranklist_store_function.h"
+#include"Ranklist_process_function.h"
 using namespace std;
-
-// define ranklist store function
 
 int ranklist_store( int score )
 {
-	ofstream fin;
+	ifstream fin;
 	fin.open("ranklist.txt");
 	int num, ranklist[202];
 	fin >> num;
@@ -40,7 +38,7 @@ int ranklist_store( int score )
 	fout.open("ranklist.txt");
 	fout << num << endl;
 	for( int i = 0; i < num; i++ )
-		fout << rank_list[i] << " ";
+		fout << ranklist[i] << " ";
 	fout << endl;
 	fout.close();
 	return ans;
