@@ -1,2 +1,2 @@
-rank_process.o : Rank_process_function.h Rank_process_function.cpp
-	g++ -c Rank_process_function.cpp
+rank_process.o : Ranklist_process_function.cpp Ranklist_process_function.h
+	g++ -c Ranklist_process_function.cpp
