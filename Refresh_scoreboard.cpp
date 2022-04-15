@@ -4,7 +4,7 @@
 #include<cmath>
 using namespace std;
 
-void refresh_scoreborad( char map[][72], int Now_score, string Name, int Best_score, int row);
+void refresh_scoreboard( char map[][72], int Now_score, string Name, int Best_score, int row);
 {
     //assume that the score is equal or less than 9999;
     //scores for printing
