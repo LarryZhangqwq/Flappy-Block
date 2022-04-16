@@ -4,54 +4,72 @@
 #include<cmath>
 using namespace std;
 
-void refresh_scoreboard( char map[][72], int Now_score, string Name, int Best_score, int row);
+int main()
 {
-    //assume that the score is equal or less than 9999;
-    //scores for printing
-    string NowScore = "";
-    string BestScore = "";
-    //count the length of the scores
-    int NowLength = 0;
-    int BestLength = 0;
-    // words to be printed out
-    string BS = "Best Score"
-    string CS =  "Current Score"
-    // used to turn int into str
-    int temp = 0; 
-    char tempChar;
-    for (int i = 3; i >= 0; --i){
-        temp = Best_score / pow(10, i);
-        if (temp == 0)
-            continue;
-        else{
-            tempChar = temp + 48;
-            BestScore += tempChar;
-            BestLength += 1;
-        }
-    }
-    temp = 0;
-    tempChar = "";
-    for (int i = 3; i >= 0; --i){
-        temp = Now_score / pow(10, i);
-        if (temp == 0)
-            continue;
-        else{
-            tempChar = temp + 48;
-            NowScore += tempChar;
-            NowLength += 1;
-        }
-    }
-    for (int i = 0; i < 13; ++i){
-        map[0][i+(col/2 - 13)/2] = CS[i];
-    }
-    for (int i = 0; i < 10; ++i){
-        map[0][i+(col/2 -10)/2+col/2] = BS[i];
-    }
-    for (int i = 0; i < NowLength; ++i){
-        map[1][i+(col/2 - 13)/2] = NowScore[i];
-    }
-    for (int i = 0; i < BestLength; ++i){
-        map[1][i+(col/2 -10)/2+col/2] = BestScore[i];
-    }
-        
+		char map[100][100];
+		int Now_score, Best_score, row, col;
+		string Name;
+		cout << "Now_s, Best_s, Row, col, Name" << endl;
+		cin >> Now_score >> Best_score >> row >> col >> Name;
+    // 初始化，在整合之后可以删除
+		for( int i = 0; i < row; i++ )
+		{
+				for( int j = 0; j < col; j++ )
+				{
+						map[i][j] = ' ';
+						if( i == 0 || i == 6 )
+								map[i][j] = '-';
+						if( j == 0 || j == col - 1 )
+								map[i][j] = '|';
+				}
+		}
+		// 初始化结束
+		char BS[15] = "Best Score: ";
+		char CS[21] = "Current Score: ";
+    char Na[15] = "Your Name: ";
+		char Nam[100];
+		// used to turn int into str
+   	int start_point_of_Name = 15;
+		int start_point_of_Now = 15;
+		int start_point_of_Best = 50;
+//-----process Name------------------
+		for( int i = start_point_of_Name; i <= start_point_of_Name + 11; i++ )
+       	map[2][i] = Na[ i - start_point_of_Name ];
+		start_point_of_Name += 11;
+		for( int i = 0; i < Name.size(); i++ )
+				Nam[i] = Name[i];
+		for( int i = start_point_of_Name; i < start_point_of_Name + Name.size(); i++ )
+				map[2][i] = Nam[ i - start_point_of_Name ];
+
+// ----------------------------------
+
+// -----process Now score------------
+
+		for( int i = start_point_of_Now; i <= start_point_of_Now + 15; i++ )
+    		map[4][i] = CS[ i - start_point_of_Now ];
+    start_point_of_Now += 15;
+		int Now_pos = start_point_of_Now;
+		int Num = 100000000;		
+		while( Now_score >= 10 )
+		{
+				if( Now_score / Num != 0 )
+				{
+						map[4][ Now_pos ] = (char)( Now_score / Num + 48 );
+						Now_score %= Num;
+						Num /= 10;
+						Now_pos++;
+				}
+				else
+						Num /= 10;
+		}
+		map[4][ Now_pos ] = (char)( Now_score + 48 );
+// ----------------------------------
+		for( int i = 0; i < row; i++ )
+		{
+				for( int j = 0; j < col; j++ )
+						cout << map[i][j];
+				cout << endl;
+		}
+		return 0;
 }
+
