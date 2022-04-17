@@ -26,10 +26,10 @@ int main()
 		// 初始化结束
 		char BS[15] = "Best Score: ";
 		char CS[21] = "Current Score: ";
-    char Na[15] = "Your Name: ";
+        char Na[15] = "Your Name: ";
 		char Nam[100];
 		// used to turn int into str
-   	int start_point_of_Name = 15;
+   	    int start_point_of_Name = 15;
 		int start_point_of_Now = 15;
 		int start_point_of_Best = 50;
 //-----process Name------------------
@@ -47,7 +47,7 @@ int main()
 
 		for( int i = start_point_of_Now; i <= start_point_of_Now + 15; i++ )
     		map[4][i] = CS[ i - start_point_of_Now ];
-    start_point_of_Now += 15;
+        start_point_of_Now += 15;
 		int Now_pos = start_point_of_Now;
 		int Num = 100000000;		
 		while( Now_score >= 10 )
@@ -64,6 +64,26 @@ int main()
 		}
 		map[4][ Now_pos ] = (char)( Now_score + 48 );
 // ----------------------------------
+
+//process best score
+        for( int i = start_point_of_Best; i <= start_point_of_Best + 11; i++ )
+    		map[4][i] = BS[ i - start_point_of_Best ];
+        start_point_of_Best += 12;
+		int Best_pos = start_point_of_Best;
+		Num = 100000000;		
+		while( Best_score >= 10 )
+		{
+				if( Best_score / Num != 0 )
+				{
+						map[4][ Best_pos ] = (char)( Best_score / Num + 48 );
+						Best_score %= Num;
+						Num /= 10;
+						Best_pos++;
+				}
+				else
+						Num /= 10;
+		}
+		map[4][ Best_pos ] = (char)( Best_score + 48 );
 		for( int i = 0; i < row; i++ )
 		{
 				for( int j = 0; j < col; j++ )
