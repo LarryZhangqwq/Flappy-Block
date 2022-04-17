@@ -45,7 +45,7 @@ int main()
 
 // -----process Now score------------
 
-		for( int i = start_point_of_Now; i <= start_point_of_Now + 15; i++ )
+		for( int i = start_point_of_Now; i <= start_point_of_Now + 14; i++ )
     		map[4][i] = CS[ i - start_point_of_Now ];
         start_point_of_Now += 15;
 		int Now_pos = start_point_of_Now;
