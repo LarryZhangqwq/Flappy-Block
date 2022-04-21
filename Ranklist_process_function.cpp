@@ -21,13 +21,12 @@ int ranklist_store( int score, int type )
 	{
 		ifstream fin;
 		fin.open("ranklist.txt");
-		int num, ranklist[202];
+		int num;
 		fin >> num;
+		int *ranklist = new int [ num + 2 ];
 		for( int i = 0; i < num; i++ )
 			fin >> ranklist[i];
 		fin.close();
-		if( num + 1 > 200 )
-			ranklist[ num - 1 ] = 0, num--;
 		for( int i = 0; i < num; i++ )
 		{
 			if( ranklist[i] <= score )
