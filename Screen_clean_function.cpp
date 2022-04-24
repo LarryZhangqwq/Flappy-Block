@@ -17,7 +17,7 @@ int main()
                 printf( "%d ", z );
             printf("\n");
         }
-        usleep(200000);
+        usleep(150000);
         printf("\033[2J\033[1;1H");
         //usleep(1100000);
 

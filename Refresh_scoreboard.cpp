@@ -4,13 +4,8 @@
 #include <cmath>
 using namespace std;
 
-int main()
+void refresh_scoreboard(char map[][100], int Now_score, string Name, int Best_score, int row, int col)
 {
-    char map[100][100];
-    int Now_score, Best_score, row, col;
-    string Name;
-    cout << "Now_s, Best_s, Row, col, Name" << endl;
-    cin >> Now_score >> Best_score >> row >> col >> Name;
     // 初始化，在整合之后可以删除
     for (int i = 0; i < row; i++)
     {
@@ -135,5 +130,5 @@ int main()
             cout << map[i][j];
         cout << endl;
     }
-    return 0;
+    return;
 }
