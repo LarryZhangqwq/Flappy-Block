@@ -19,23 +19,33 @@ int main()
 		now_high += 4;
 	if( now_high + 4 >= row )
 		now_high -= 5;
+	cout << now_high << endl;
 //	cout << now_high << endl;
 // ------------ End ---------------------
 
 // ---------Put new wall in map----------
-	int width = 12; // set the width of wall as 12
-	char ** map = new char *[ row + 40 ];
-	for( int i = 0; i < row + 40; i++ )
-		map[i] = new char [ col + 1 ];
-	for( int i = 0; i < row + 40 ;i++ )
+	int width = 6; // set the width of wall as 12
+	char map[200][200];
+	for( int i = 0; i < row; i++ )
+		for( int j = 0; j < col; j++ )	
+			map[i][j] = ' ';
+	int now_col = 10;
+	for( int i = 0; i < row; i++ )
 	{
-		delete map[i];
-		map[i] = NULL;
+		if( i >= now_high - 2 && i <= now_high + 2 )
+			continue;
+		for( int j = now_col - width / 2; j <= now_col + width / 2; j++ )
+			map[i][j] = '#';
+		if( i == now_high - 3 || i == now_high + 3 )
+			map[i][ now_col - width / 2 - 1 ] = '#', map[i][ now_col + width / 2 + 1 ] = '#';
 	}
-
-	delete [row+40]map;
-	map = NULL;
-
+	for( int i = 0; i < row; i++ )
+	{
+		for( int j = 0; j < col; j++ )	
+			cout << map[i][j];
+		cout << endl;
+	}
+    
 // ---------- End -----------------------
 		
 	return 0;
