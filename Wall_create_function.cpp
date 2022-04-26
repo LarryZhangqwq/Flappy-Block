@@ -42,10 +42,12 @@ int main()
 	for( int i = 0; i < row; i++ )
 	{
 		for( int j = 0; j < col; j++ )	
-			cout << map[i][j];
+			if( map[i][j] == '#' )
+				printf("\033[0;30;42m \033[0m");
+			else
+				cout << " ";
 		cout << endl;
 	}
-    
 // ---------- End -----------------------
 		
 	return 0;
