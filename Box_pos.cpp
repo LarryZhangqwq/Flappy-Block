@@ -32,7 +32,7 @@ int main()
 	char map[100][100];
 	cout << "col, row, " << endl;
 	int col, row;
-	cin >> col >> row; 
+	cin >> col >> row;
 	for( int i = 0; i < row; i++ )
 		for( int j = 0; j < col; j++ )
 			map[i][j] = ' ';
