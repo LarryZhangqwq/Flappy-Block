@@ -3,13 +3,12 @@
 #include<ctime>
 using namespace std;
 
-
-int main()
+int Wall_create_function( char map[200][200], int pre_high, int col, int row ) 
 {
 // --------Create Now_high-------------
-	int pre_high, row, col; // previous high
-	cout << "Pre_high, row, col" << endl;
-	cin >> pre_high >> row >> col;
+//	int pre_high, row, col; // previous highi
+//	cout << "Pre_high, row, col" << endl;
+//	cin >> pre_high >> row >> col;
 	srand(time(0));
 	int now_high = rand();
 	int now_type = ( rand() % 2 == 0 )? -1: 1;
@@ -19,16 +18,16 @@ int main()
 		now_high += 4;
 	if( now_high + 4 >= row )
 		now_high -= 5;
-	cout << now_high << endl;
+//	cout << now_high << endl;
 //	cout << now_high << endl;
 // ------------ End ---------------------
 
 // ---------Put new wall in map----------
 	int width = 6; // set the width of wall as 12
-	char map[200][200];
-	for( int i = 0; i < row; i++ )
-		for( int j = 0; j < col; j++ )	
-			map[i][j] = ' ';
+//	char map[200][200];
+//	for( int i = 0; i < row; i++ )
+//		for( int j = 0; j < col; j++ )	
+//			map[i][j] = ' ';
 	int now_col = 10;
 	for( int i = 0; i < row; i++ )
 	{
@@ -50,5 +49,5 @@ int main()
 	}
 // ---------- End -----------------------
 		
-	return 0;
+	return now_high;
 }
