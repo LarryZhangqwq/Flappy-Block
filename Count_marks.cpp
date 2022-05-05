@@ -1,7 +1,7 @@
 #include <iostream>
 #include "Count_marks.h"
 
-void countmarks(char board[][100], int row, int col, int& marks){
+void countmarks(char board[][200], int row, int col, int& marks){
     bool judge1 = 0;
     bool judge2 = 1;
     for (int i = 0; i < row; i++){

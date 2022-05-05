@@ -1,15 +1,13 @@
 #include<iostream>
 #include<algorithm>
 #include<cstdio>
+#include"Start_and_end_function.h"
 using namespace std;
 // required: row, col, now_score, type, rank_function
-int main() // 等待输入名字，输入后返回string类型的名字
+string start_and_end(int row, int col, int now_score = 0, int type, string Name = "") // 等待输入名字，输入后返回string类型的名字
 {
 // ------- init ---------
 	char map[200][200];
-	int row, col, type, now_score;
-	cout << "col, row, now_score, type" << endl;
-	cin >> col >> row >> now_score >> type;
 	for( int i = 0; i < row; i++ )
 		for( int j = 0; j < col; j++ )
 			map[i][j] = ' ';
@@ -45,7 +43,7 @@ int main() // 等待输入名字，输入后返回string类型的名字
 		cout << "Please type your name to start: ";
 		string s;
 		cin >> s;
-		return 0;
+		return s;
 	}
 // -------- End ----------------
 
@@ -73,7 +71,7 @@ int main() // 等待输入名字，输入后返回string类型的名字
 			cout << endl;
 		for( int i = 0; i < col / 2 - 10; i++ )
 			cout << " ";
-		cout << "Your name: " << endl;
+		cout << "Your name: " << Name << endl;
 		for( int i = 0; i < col / 2 - 10; i++ )
 			cout << " ";
 		cout << "Your score: " << now_score << endl;
@@ -84,5 +82,4 @@ int main() // 等待输入名字，输入后返回string类型的名字
 			cout << endl;
 	}
 // -------- End ----------------
-	return 0;
 }

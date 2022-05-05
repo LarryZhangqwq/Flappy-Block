@@ -4,7 +4,7 @@
 #include <cmath>
 using namespace std;
 
-void refresh_scoreboard(char map[][100], int Now_score, string Name, int Best_score, int row, int col)
+void refresh_scoreboard(char map[][200], int Now_score, string Name, int Best_score, int row, int col)
 {
     // 初始化，在整合之后可以删除
     for (int i = 0; i < row; i++)
@@ -24,9 +24,9 @@ void refresh_scoreboard(char map[][100], int Now_score, string Name, int Best_sc
     char Na[15] = "Your Name: ";
     char Nam[100];
     // used to turn int into str
-    int start_point_of_Name = 15;
-    int start_point_of_Now = 15;
-    int start_point_of_Best = 50;
+    int start_point_of_Name = col/4-5;
+    int start_point_of_Now = col/4-5;
+    int start_point_of_Best = col/4-5+col/2;
     //-----process Name------------------
     for (int i = start_point_of_Name; i <= start_point_of_Name + 11; i++)
         map[2][i] = Na[i - start_point_of_Name];
@@ -123,12 +123,6 @@ void refresh_scoreboard(char map[][100], int Now_score, string Name, int Best_sc
             else
                 Num /= 10;
         }
-    }
-    for (int i = 0; i < row; i++)
-    {
-        for (int j = 0; j < col; j++)
-            cout << map[i][j];
-        cout << endl;
     }
     return;
 }

@@ -4,7 +4,7 @@
 #include"Ranklist_process_function.h"
 using namespace std;
 
-int ranklist_store( int score, int type )
+int ranklist_process( int score = 0, int type )
 {
 	int ans = -1;
 	if( type == 0 ) //get best score only
@@ -23,7 +23,7 @@ int ranklist_store( int score, int type )
 		fin.open("ranklist.txt");
 		int num;
 		fin >> num;
-		int *ranklist = new int [ num + 2 ];
+		int *ranklist = new int[ num + 2 ];
 		for( int i = 0; i < num; i++ )
 			fin >> ranklist[i];
 		fin.close();
