@@ -30,7 +30,7 @@ int main()
 			for( int j = 0; j < col; j++ )
 				map[i][j] = map[i][ j + 1 ];
 		print_function( map, col, row );
-		usleep(200000);
+		usleep(time_gap);
 	}
 	return 0;
 }
