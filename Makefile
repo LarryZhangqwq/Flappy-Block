@@ -6,3 +6,6 @@ Getsize.o : Getsize.cpp Getsize.h
 
 Start_and_end_function.o : Start_and_end_function.cpp Start_and_end_function.h
 	g++ -c Start_and_end_function.cpp
+
+Skill.o : Skill.cpp Skill.h
+	g++ -c Skill.cpp
