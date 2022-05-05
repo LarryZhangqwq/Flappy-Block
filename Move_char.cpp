@@ -7,6 +7,7 @@
 #include <string.h>
 #include <unistd.h>
 #include "Wall_create_function.cpp"
+#include "Skill.cpp"
 using namespace std;
 
 int main()
@@ -14,6 +15,7 @@ int main()
 // ---- init -------
 	char map[200][200];
 	int col, row, h;
+	int time_gap = 200000;
 	cout << "col, row, h" << endl;
 	cin >> col >> row >> h;
 	for( int i = 0; i <= row; i++ )	
