@@ -9,3 +9,6 @@ Start_and_end_function.o : Start_and_end_function.cpp Start_and_end_function.h
 
 Skill.o : Skill.cpp Skill.h
 	g++ -c Skill.cpp
+
+Count_marks.o : Count_marks.cpp Count_marks.h
+	g++ -c Count_marks.cpp
