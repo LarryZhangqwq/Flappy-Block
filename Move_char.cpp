@@ -7,7 +7,7 @@
 #include <string.h>
 #include <unistd.h>
 #include "Wall_create_function.cpp"
-#include "Skill.h"
+#include "Skill.cpp"
 using namespace std;
 
 int main()
@@ -31,7 +31,7 @@ int main()
 				map[i][j] = map[i][ j + 1 ];
 		print_function( map, col, row );
 		usleep(time_gap);
-		skill( map, col, row );
+//		skill( map, col, row );
 	}
 	return 0;
 }
