@@ -1,4 +1,4 @@
-#ifdef SKILL_H
+#ifndef SKILL_H
 #define SKILL_H
 
 void skill( char map[][200], int col, int row );
