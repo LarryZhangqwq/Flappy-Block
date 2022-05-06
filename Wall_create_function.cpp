@@ -10,6 +10,8 @@ void print_function( char map[][200], int col, int row )
 		for( int j = 0; j < col; j++ )	
 			if( map[i][j] == '#' )
 				printf("\033[0;30;42m \033[0m");
+			else if( map[i][j] == '@')
+				printf("\033[0;30;103m \033[0m");
 			else
 				cout << map[i][j];
 		cout << endl;
