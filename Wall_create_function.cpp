@@ -7,11 +7,12 @@ void Wall_clean(char map[][200], int row, int col){
 	{
 		for(int j = 1; j < col-1; j++){
 			if(map[i][j] != '@'){
-				map[i][j] == ' ';
+				map[i][j] = ' ';
 			}
 		}
 	}
 }
+
 int Wall_create_function( char map[][200], int pre_high, int col, int row ) 
 {
 // --------Create Now_high-------------

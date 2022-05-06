@@ -5,8 +5,19 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <string.h>
-#include <unistd.h>
+#include <sys/ioctl.h>
+#include <stdio.h>
 using namespace std;
+
+void getsize( int &x, int &y )
+{
+    struct winsize w;
+    ioctl(STDOUT_FILENO, TIOCGWINSZ, &w);
+		x = w.ws_row;
+		y = w.ws_col;
+    return ;  // make sure your main returns int
+}
+
 
 void move_char( char map[][200], int row, int col )
 {
@@ -38,4 +49,23 @@ void print_function( char map[][200], int col, int row )
 				cout << map[i][j];
 		cout << endl;
 	}
+}
+
+char get_keyboard(void)
+{
+	char input;
+	struct termios new_settings;
+	struct termios stored_settings;
+	tcgetattr(0, &stored_settings);
+	new_settings = stored_settings;
+	new_settings.c_lflag &= (~ICANON);
+	new_settings.c_cc[VTIME] = 0;
+	tcgetattr(0, &stored_settings);
+	new_settings.c_cc[VMIN] = 1;
+	tcsetattr(0, TCSANOW, &new_settings);
+
+	input = getchar();
+
+	tcsetattr(0, TCSANOW, &stored_settings);
+	return input;
 }
