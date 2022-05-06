@@ -14,7 +14,7 @@
 #include "Refresh_scoreboard.cpp"
 #include "Skill.cpp"
 #include "Start_and_end_function.cpp"
-#include "Move_char.cpp"
+#include "Display_functions.cpp"
 using namespace std;
 
 char get_keyboard(void)
