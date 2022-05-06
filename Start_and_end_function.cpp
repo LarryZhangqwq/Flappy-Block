@@ -21,19 +21,19 @@ string start_and_end(int row, int col, int now_score, int ranking, int type, str
 			cout << endl;
 		for( int i = 0; i < col / 2 - 27; i++ )
 			cout << " ";
-		cout << " _____ _                         ____  _         _" << endl;
+		cout << " _____ _                         ____  _             _   _" << endl;
 		for( int i = 0; i < col / 2 - 27; i++ )
 			cout << " "; 
-		cout << "|  ___| | __ _ _ __  _ __  _   _| __ )(_)_ __ __| |" << endl;
+		cout << "|  ___| | __ _ _ __  _ __  _   _| __ )| |  ___   ___| | / /" << endl;
 		for( int i = 0; i < col / 2 - 27; i++ )
 			cout << " "; 
-		cout << "| |_  | |/ _` | '_ \\| '_ \\| | | |  _ \\| | '__/ _` |" << endl;
+		cout << "| |_  | |/ _` | '_ \\| '_ \\| | | |  _ \\| | / _ \\ / __| |/ /" << endl;
 		for( int i = 0; i < col / 2 - 27; i++ )
 			cout << " "; 
-		cout << "|  _| | | (_| | |_) | |_) | |_| | |_) | | | | (_| |" << endl;
+		cout << "|  _| | | (_| | |_) | |_) | |_| | |_) | || (_) | |__| |\\ \\" << endl;
 		for( int i = 0; i < col / 2 - 27; i++ )
 			cout << " "; 
-		cout << "|_|   |_|\\__,_| .__/| .__/ \\__, |____/|_|_|  \\__,_|" << endl;
+		cout << "|_|   |_|\\__,_| .__/| .__/ \\__, |____/|_| \\___/ \\___|_| \\_\\" << endl;
 		for( int i = 0; i < col / 2 - 27; i++ )
 			cout << " "; 
 		cout << "              |_|   |_|    |___/" << endl;
