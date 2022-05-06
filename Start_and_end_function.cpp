@@ -1,7 +1,7 @@
 #include<iostream>
 #include<algorithm>
 #include<cstdio>
-//#include"Start_and_end_function.h"
+#include "Start_and_end_function.h"
 using namespace std;
 // required: row, col, now_score, type, rank_function
 

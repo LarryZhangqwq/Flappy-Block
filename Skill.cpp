@@ -1,6 +1,7 @@
 #include <iostream>
 #include <algorithm>
 #include <cstdio>
+#include "Skill.h"
 using namespace std;
 
 void skill( char map[][200], int col, int row )

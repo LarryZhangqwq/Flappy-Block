@@ -7,13 +7,13 @@
 #include <unistd.h>
 #include <sys/ioctl.h>
 #include <termios.h>
-#include "Count_marks.cpp"
-#include "Wall_create_function.cpp"
-#include "Ranklist_process_function.cpp"
-#include "Refresh_scoreboard.cpp"
-#include "Skill.cpp"
-#include "Start_and_end_function.cpp"
-#include "Display_functions.cpp"
+#include "Count_marks.h"
+#include "Wall_create_function.h"
+#include "Ranklist_process_function.h"
+#include "Refresh_scoreboard.h"
+#include "Skill.h"
+#include "Start_and_end_function.h"
+#include "Display_functions.h"
 using namespace std;
 
 int main()

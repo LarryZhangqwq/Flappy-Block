@@ -1,6 +1,7 @@
 #include<iostream>
 #include<algorithm>
 #include<ctime>
+#include "Wall_create_function.h"
 using namespace std;
 void Wall_clean(char map[][200], int row, int col){
 	for (int i = 7; i < row; i++)

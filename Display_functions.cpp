@@ -7,6 +7,7 @@
 #include <string.h>
 #include <sys/ioctl.h>
 #include <stdio.h>
+#include "Display_functions.h"
 using namespace std;
 
 void getsize( int &x, int &y )
