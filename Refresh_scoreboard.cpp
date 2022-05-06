@@ -4,7 +4,7 @@
 #include <cmath>
 using namespace std;
 
-void refresh_scoreboard(char map[][200], int Now_score, string Name, int Best_score, int row, int col)
+void refresh_scoreboard(char map[][200], int Now_score, string Name, int Best_score, int row, int col, int skill)
 {
     // 初始化，在整合之后可以删除
     for (int i = 0; i < row; i++)
@@ -21,11 +21,13 @@ void refresh_scoreboard(char map[][200], int Now_score, string Name, int Best_sc
     char BS[15] = "Best Score: ";
     char CS[21] = "Current Score: ";
     char Na[15] = "Your Name: ";
+    char skillwords[20] = "Skill numbers: ";
     char Nam[100];
     // used to turn int into str
     int start_point_of_Name = col/4-5;
     int start_point_of_Now = col/4-5;
     int start_point_of_Best = col/4-5+col/2;
+    int start_point_of_skill = col/4-5+col/2;
     //-----process Name------------------
     for (int i = start_point_of_Name; i <= start_point_of_Name + 11; i++)
         map[2][i] = Na[i - start_point_of_Name];
@@ -117,6 +119,46 @@ void refresh_scoreboard(char map[][200], int Now_score, string Name, int Best_sc
                     Best_score %= Num;
                     Num /= 10;
                     Best_pos++;
+                }
+            }
+            else
+                Num /= 10;
+        }
+    }
+    for (int i = start_point_of_skill; i <= start_point_of_skill + 14; i++)
+        map[2][i] = skillwords[i - start_point_of_skill];
+    start_point_of_skill += 15;
+    Now_pos = start_point_of_skill;
+    Num = 100000000;
+    if (skill == 0)
+        map[2][Now_pos] = (char)(48);
+    else
+    {
+        while (skill != 0)
+        {
+            if (skill / Num != 0)
+            {
+                if (skill % Num == 0)
+                {
+                    int zerolength = log10(Num);
+
+                    for (int i = Now_pos; i <= Now_pos + zerolength; ++i)
+                    {
+                        if (i == Now_pos)
+                            map[2][i] = (char)(skill / Num + 48);
+                        else
+                        {
+                            map[2][i] = (char)(48);
+                        }
+                    }
+                    break;
+                }
+                else
+                {
+                    map[2][Now_pos] = (char)(skill / Num + 48);
+                    skill %= Num;
+                    Num /= 10;
+                    Now_pos++;
                 }
             }
             else

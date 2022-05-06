@@ -2,19 +2,14 @@
 #include<algorithm>
 #include<ctime>
 using namespace std;
-
-void print_function( char map[][200], int col, int row )
-{
-	for( int i = 0; i < row; i++ )
+void Wall_clean(char map[][200], int row, int col){
+	for (int i = 7; i < row; i++)
 	{
-		for( int j = 0; j < col; j++ )	
-			if( map[i][j] == '#' )
-				printf("\033[0;30;42m \033[0m");
-			else if( map[i][j] == '@')
-				printf("\033[0;30;103m \033[0m");
-			else
-				cout << map[i][j];
-		cout << endl;
+		for(int j = 1; j < col-1; j++){
+			if(map[i][j] != '@'){
+				map[i][j] == ' ';
+			}
+		}
 	}
 }
 int Wall_create_function( char map[][200], int pre_high, int col, int row ) 
