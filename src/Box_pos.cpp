@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
-#include "./lib/conio.h"
+#include "../lib/conio.h"
 #include <unistd.h>
 #include <sys/ioctl.h>
 #include <termios.h>
