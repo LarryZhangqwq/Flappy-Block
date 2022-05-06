@@ -12,8 +12,9 @@
 #include "Wall_create_function.cpp"
 #include "Ranklist_process_function.cpp"
 #include "Refresh_scoreboard.cpp"
-#include "Skill.h"
+#include "Skill.cpp"
 #include "Start_and_end_function.cpp"
+#include "Move_char.cpp"
 using namespace std;
 
 char get_keyboard(void)
@@ -37,76 +38,63 @@ char get_keyboard(void)
 
 int main()
 {
-	int row = 0;
-	int col = 0; //width and height of terminal 
-	int count = 0;
-	int now_score = 0;
-	int best_score = ranklist_process(0);
+	int row = 0, col = 0; //width and height of terminal 
+	int listnum, count = 0, ranking;
+	int now_score = 0, best_score = ranklist_process( 0, 0 );
 	int wall_height = 10;
-	string name;
-	char map[row][200];
+	string name = "abc", temp;
+	char map[200][200];
 	getsize(row, col);
-	name = start_and_end(row, col, 1);
-	int box_pos = 5;
-	map[box_pos][10] = '#';
+	name = start_and_end( row, col, 0, 0, 1, "" );
+	int box_pos = 15;
 	bool u = 0;
-	while (u != 1)
+	init( map, row, col );
+	map[box_pos][10] = '@';
+	while ( u != 1 )
 	{
-		refresh_scoreboard(map, now_score, name, best_score, row, col);
-		if (count % 15 == 0){
+		refresh_scoreboard( map, now_score, name, best_score, row, col );
+		if ( count % 15 == 0 )
 			wall_height = Wall_create_function(map, wall_height, col, row);
-		}
 		if (!kbhit())
 		{
-			if (map[box_pos + 1][10] == '#')
+			if ( box_pos + 1 == row || map[box_pos + 1][10] == '#')
 			{
-				start_and_end(row, col, now_score, 0);
-				ranklist_process(now_score,1);
+				ranking = ranklist_process( now_score, 1 );
+				temp = start_and_end( row, col, now_score, ranking, 0, name );
+				u = 1;
 				break;
 			}
 			else
 			{
 				map[box_pos][10] = ' ';
 				box_pos += 1;
-				if (box_pos == row - 1)
-				{
-					start_and_end(row, col, now_score, 0);
-					ranklist_process(now_score,1);
-					break;
-					u = 1;
-				}
-				map[box_pos][10] = '#';
+				map[box_pos][10] = '@';
 			}
 		}
 		else
 		{
 			char t;
 			t = get_keyboard();
-			if (map[box_pos - 2][10] == '#')
+			if ( box_pos <= 7 || map[box_pos - 2][10] == '#' )
 			{
-				start_and_end(row, col, now_score, 0);
-				ranklist_process(now_score,1);
+				ranking = ranklist_process( now_score, 1 );
+				temp = start_and_end( row, col, now_score, ranking, 0, name );
+				u = 1;
 				break;
 			}
 			else
 			{
 				map[box_pos][10] = ' ';
 				box_pos -= 2;
-				if (box_pos < 1)
-				{
-					start_and_end(row, col, now_score, 0);
-					ranklist_process(now_score,1);
-					break;
-					u = 1;
-				}
-				map[box_pos][10] = '#';
+				map[box_pos][10] = '@';
 			}
 		}
 		countmarks(map, row, col, now_score);
 		print_function(map, col, row);
-		printf("\033[2J\033[1;1H");
-		count += 1;
 		usleep(200000);
+		printf("\033[2J\033[1;1H");
+		move_char( map, row, col ); 
+		count += 1;
 	}
 
 	return 0;

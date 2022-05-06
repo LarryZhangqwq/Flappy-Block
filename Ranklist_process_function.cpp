@@ -4,7 +4,7 @@
 #include"Ranklist_process_function.h"
 using namespace std;
 
-int ranklist_process( int score = 0, int type )
+int ranklist_process( int score, int type )
 {
 	int ans = -1;
 	if( type == 0 ) //get best score only

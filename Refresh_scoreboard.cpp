@@ -11,7 +11,6 @@ void refresh_scoreboard(char map[][200], int Now_score, string Name, int Best_sc
     {
         for (int j = 0; j < col; j++)
         {
-            map[i][j] = ' ';
             if (i == 0 || i == 6)
                 map[i][j] = '-';
             if (j == 0 || j == col - 1)
