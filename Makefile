@@ -1,14 +1,28 @@
-Rank_process.o : Ranklist_process_function.cpp Ranklist_process_function.h
-	g++ -c Ranklist_process_function.cpp
+FLAGS = -pedantic-errors -std=c++11
 
-Getsize.o : Getsize.cpp Getsize.h
-	g++ -c Getsize.cpp
+bin/Ranklist_process_function.o : src/Ranklist_process_function.cpp src/Ranklist_process_function.h
+	g++ $(FLAGS) -c $< -o $@
 
-Start_and_end_function.o : Start_and_end_function.cpp Start_and_end_function.h
-	g++ -c Start_and_end_function.cpp
+bin/Start_and_end_function.o : src/Start_and_end_function.cpp src/Start_and_end_function.h
+	g++ $(FLAGS) -c $< -o $@
 
-Skill.o : Skill.cpp Skill.h
-	g++ -c Skill.cpp
+bin/Skill.o : src/Skill.cpp src/Skill.h
+	g++ $(FLAGS) -c $< -o $@
 
-Count_marks.o : Count_marks.cpp Count_marks.h
-	g++ -c Count_marks.cpp
+bin/Count_marks.o : src/Count_marks.cpp src/Count_marks.h
+	g++ $(FLAGS) -c $< -o $@
+
+bin/Wall_create_function.o : src/Wall_create_function.cpp src/Wall_create_function.h
+	g++ $(FLAGS) -c $< -o $@
+
+bin/Refresh_scoreboard.o : src/Refresh_scoreboard.cpp src/Refresh_scoreboard.h
+	g++ $(FLAGS) -c $< -o $@
+
+bin/Display_function.o : src/Display_functions.cpp src/Display_functions.h
+	g++ $(FLAGS) -c $< -o $@
+
+bin/main.o : src/main.cpp src/Display_functions.h src/Refresh_scoreboard.h src/Wall_create_function.h src/Count_marks.h src/Skill.h src/Start_and_end_function.h src/Ranklist_process_function.h
+	g++ $(FLAGS) -c $< -o $@
+	
+main : bin/main.o bin/Display_function.o bin/Refresh_scoreboard.o bin/Wall_create_function.o bin/Count_marks.o bin/Skill.o Start_and_end_function.o bin/Ranklist_process_function.o
+	g++ $(FLAGS) $^ -o main
