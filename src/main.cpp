@@ -23,11 +23,11 @@ int main()
 	int listnum, count = 0, ranking;
 	int now_score = 0, best_score = ranklist_process(0, 0);
 	int wall_height = 10, box_pos = 15;
-	int skill = 2, timer = 0, during_skill = 0, count2 = 0;
+	int skill = 2, timer1 = 0, during_skill = 0, count2 = 0, during_transition = 0;
 	char map[200][200];
 	bool u = 0;
 	string name, temp;
-	
+	string magictime = "MagicTime!";
 	getsize(row, col);
 	init(map, row, col);
 	name = start_and_end(row, col, 0, 0, 1, "");
@@ -35,10 +35,12 @@ int main()
 
 	while ( u != 1 )
 	{
-		if ( timer == 25 ){
-			timer = 0;
+		if ( timer1 == 35 ){
+			timer1 = 0;
 			during_skill = 0;
+			Wall_clean(map, row, col);
 		}
+		if (during_skill == 0)
 		refresh_scoreboard(map, now_score, name, best_score, row, col, skill);
 		if (count % 15 == 0 && during_skill == 0)
 			wall_height = Wall_create_function(map, wall_height, col, row);
@@ -81,8 +83,12 @@ int main()
 			}
 			else if (t == 's' && during_skill == 0 && skill > 0){
 				Wall_clean(map, row, col);
+				for (int i = col/2-5; i < col/2+5; i++){
+					map[7][i] = magictime[i-col/2+5];
+				}
 				during_skill = 1;
 				skill--;
+				skill_transition(row, col);
 			}
 		}
 		countmarks(map, row, col, now_score, count2);
@@ -92,7 +98,7 @@ int main()
 		move_char(map, row, col);
 		count += 1;
 		if (during_skill == 1){
-			timer += 1;
+			timer1 += 1;
 		}
 		if (count2 > 10){
 			skill += 1;

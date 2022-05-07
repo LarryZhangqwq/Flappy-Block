@@ -21,7 +21,7 @@ void refresh_scoreboard(char map[][200], int Now_score, string Name, int Best_sc
     char BS[15] = "Best Score: ";
     char CS[21] = "Current Score: ";
     char Na[15] = "Your Name: ";
-    char skillwords[20] = "Skill numbers: ";
+    char skillwords[20] = "Magic numbers: ";
     char Nam[100];
     // used to turn int into str
     int start_point_of_Name = col/4-5;

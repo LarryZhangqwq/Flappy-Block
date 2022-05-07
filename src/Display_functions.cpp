@@ -16,11 +16,15 @@ void move_char( char map[][200], int row, int col )
 {
 	for( int i = 7; i < row; i++ )
 		for( int j = 1; j < col - 2; j++ )
-			if( map[i][ j + 1 ] != '@' )
+			if( map[i][ j + 1 ] == '#' ){
 				map[i][j] = map[i][ j + 1 ];
-			else
+			}
+			else if (map[i][j] != '#' && map[i][j] != ' '){
+				map[i][j] = map[i][j];
+			}
+			else if (map[i][j+1] == ' ')
 				map[i][j] = ' ';
-
+			
 }
 
 void init( char map[][200], int row ,int col )
