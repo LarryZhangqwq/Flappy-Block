@@ -10,7 +10,7 @@
 #include "Display_functions.h"
 #include <termios.h>
 using namespace std;
-
+//let the picture move
 void move_char(char map[][200], int row, int col)
 {
 	for (int i = 7; i < row; i++)
@@ -28,13 +28,14 @@ void move_char(char map[][200], int row, int col)
 			else if(map[i][j+1] == '$')
 				map[i][j] = map[i][j+1];
 }
-
+//initialize the array of the whole picture
 void init(char map[][200], int row, int col)
 {
 	for (int i = 0; i < 200; i++)
 		for (int j = 0; j < 200; j++)
 			map[i][j] = ' ';
 }
+//print the array of the whole picture
 void print_function(char map[][200], int col, int row)
 {
 	for (int i = 0; i < row; i++)
@@ -59,7 +60,7 @@ void print_function(char map[][200], int col, int row)
 		std::cout << std::endl;
 	}
 }
-
+//used to get the action from the keyboard
 char get_keyboard(void)
 {
 	char input;

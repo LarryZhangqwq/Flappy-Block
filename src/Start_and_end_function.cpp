@@ -12,7 +12,7 @@
 #include "Start_and_end_function.h"
 using namespace std;
 // required: row, col, now_score, type, rank_function
-
+// show the start picture or the game over picture
 string start_and_end(int row, int col, int now_score, int ranking, int type, string Name) // 等待输入名字，输入后返回string类型的名字
 {
 	// ------- init ---------
@@ -177,6 +177,7 @@ string start_and_end(int row, int col, int now_score, int ranking, int type, str
 	}
 	// -------- End ----------------
 }
+//show the skill start transition pisture
 void skill_start(int row, int col)
 {
 	int start_pos = col / 2 - 36;
@@ -272,6 +273,7 @@ void skill_start(int row, int col)
 	usleep(1000000);
 	printf("\033[2J\033[1;1H");
 }
+// show the skill end picture
 void skill_end(int row, int col)
 {
 	string line1 = "###    ###  #####   ######  ####  ######      ###### ##    ## #######    ";

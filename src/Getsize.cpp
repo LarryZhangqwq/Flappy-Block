@@ -1,9 +1,10 @@
 #include <sys/ioctl.h>
 #include <stdio.h>
 #include <unistd.h>
-//#include "Getsize.h"
+#include "Getsize.h"
 #include <iostream>
 using namespace std;
+//used to get the size of terminal
 void getsize( int &x, int &y )
 {
     struct winsize w;

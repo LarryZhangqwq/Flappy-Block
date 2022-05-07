@@ -3,7 +3,7 @@
 #include<ctime>
 #include "Wall_create_function.h"
 using namespace std;
-
+//clean the walls
 void Wall_clean(char map[][200], int row, int col){
 	for (int i = 7; i < row; i++)
 	{
@@ -14,7 +14,7 @@ void Wall_clean(char map[][200], int row, int col){
 		}
 	}
 }
-
+// create the walls randomly
 int Wall_create_function( char map[][200], int pre_high, int col, int row ) 
 {
 // --------Create Now_high-------------
@@ -54,6 +54,7 @@ int Wall_create_function( char map[][200], int pre_high, int col, int row )
 		
 	return now_high;
 }
+//create the gravity converter randomly
 void converter_create(char map[][200], int row, int col, int pre_high){
 	srand(time(0));
 	int create_col;
