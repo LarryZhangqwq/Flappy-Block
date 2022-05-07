@@ -1,6 +1,6 @@
 #include <iostream>
 #include "Count_marks.h"
-
+using namespace std;
 void countmarks(char board[][200], int row, int col, int& marks, int& count2){
     bool judge1 = 0;
     bool judge2 = 1;

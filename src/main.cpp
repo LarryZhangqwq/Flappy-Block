@@ -14,6 +14,7 @@
 #include "Skill.h"
 #include "Start_and_end_function.h"
 #include "Display_functions.h"
+#include "Getsize.h"
 using namespace std;
 
 int main()

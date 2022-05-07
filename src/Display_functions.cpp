@@ -8,16 +8,8 @@
 #include <sys/ioctl.h>
 #include <stdio.h>
 #include "Display_functions.h"
+#include <termios.h>
 using namespace std;
-
-void getsize( int &x, int &y )
-{
-    struct winsize w;
-    ioctl(STDOUT_FILENO, TIOCGWINSZ, &w);
-		x = w.ws_row;
-		y = w.ws_col;
-    return ;  // make sure your main returns int
-}
 
 
 void move_char( char map[][200], int row, int col )
@@ -47,8 +39,8 @@ void print_function( char map[][200], int col, int row )
 			else if( map[i][j] == '@')
 				printf("\033[0;30;103m \033[0m");
 			else
-				cout << map[i][j];
-		cout << endl;
+				std::cout << map[i][j];
+		std::cout << std::endl;
 	}
 }
 

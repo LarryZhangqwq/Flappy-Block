@@ -1,5 +1,6 @@
-#ifdef REFRESH_SCOREBOARD_H
+#ifndef REFRESH_SCOREBOARD_H
 #define REFRESH_SCOREBOARD_H
-void refresh_scoreboard(char map[][200], int Now_score, string Name, int Best_score, int row, int col, int skill);
+
+void refresh_scoreboard(char[][200], int, std::string, int, int, int, int);
 
 #endif
