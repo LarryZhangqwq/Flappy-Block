@@ -33,19 +33,20 @@ int main()
 	name = start_and_end(row, col, 0, 0, 1, "");
 	map[box_pos][10] = '@';
 
-	while ( u != 1 )
+	while (u != 1)
 	{
-		if ( timer1 == 35 ){
+		if (timer1 == 35)
+		{
 			timer1 = 0;
 			during_skill = 0;
 			Wall_clean(map, row, col);
 			skill_end(row, col);
 		}
 		if (during_skill == 0)
-		refresh_scoreboard(map, now_score, name, best_score, row, col, skill);
+			refresh_scoreboard(map, now_score, name, best_score, row, col, skill);
 		if (count % 15 == 0 && during_skill == 0)
 			wall_height = Wall_create_function(map, wall_height, col, row);
-			
+
 		if (!kbhit())
 		{
 			if (box_pos + 1 == row || map[box_pos + 1][10] == '#')
@@ -68,7 +69,7 @@ int main()
 			t = get_keyboard();
 			if (t == ' ')
 			{
-				if ( box_pos <= 7 || map[box_pos - 2][10] == '#' )
+				if (box_pos <= 7 || map[box_pos - 2][10] == '#')
 				{
 					ranking = ranklist_process(now_score, 1);
 					temp = start_and_end(row, col, now_score, ranking, 0, name);
@@ -82,10 +83,12 @@ int main()
 					map[box_pos][10] = '@';
 				}
 			}
-			else if (t == 's' && during_skill == 0 && skill > 0){
+			else if (t == 's' && during_skill == 0 && skill > 0)
+			{
 				Wall_clean(map, row, col);
-				for (int i = col/2-5; i < col/2+5; i++){
-					map[7][i] = magictime[i-col/2+5];
+				for (int i = col / 2 - 5; i < col / 2 + 5; i++)
+				{
+					map[7][i] = magictime[i - col / 2 + 5];
 				}
 				during_skill = 1;
 				skill--;
@@ -98,10 +101,12 @@ int main()
 		printf("\033[2J\033[1;1H");
 		move_char(map, row, col);
 		count += 1;
-		if (during_skill == 1){
+		if (during_skill == 1)
+		{
 			timer1 += 1;
 		}
-		if (count2 > 10){
+		if (count2 > 10)
+		{
 			skill += 1;
 			count2 -= 10;
 		}

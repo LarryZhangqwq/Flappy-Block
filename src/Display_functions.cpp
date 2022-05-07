@@ -11,42 +11,43 @@
 #include <termios.h>
 using namespace std;
 
-
-void move_char( char map[][200], int row, int col )
+void move_char(char map[][200], int row, int col)
 {
-	for( int i = 7; i < row; i++ )
-		for( int j = 1; j < col - 2; j++ )
-			if( map[i][ j + 1 ] == '#' ){
-				map[i][j] = map[i][ j + 1 ];
+	for (int i = 7; i < row; i++)
+		for (int j = 1; j < col - 2; j++)
+			if (map[i][j + 1] == '#')
+			{
+				map[i][j] = map[i][j + 1];
 			}
-			else if (map[i][j] != '#' && map[i][j] != ' '){
+			else if (map[i][j] != '#' && map[i][j] != ' ')
+			{
 				map[i][j] = map[i][j];
 			}
-			else if (map[i][j+1] == ' ')
+			else if (map[i][j + 1] == ' ')
 				map[i][j] = ' ';
-			
 }
 
-void init( char map[][200], int row ,int col )
+void init(char map[][200], int row, int col)
 {
-	for( int i = 0; i < row; i++ )
-		for( int j = 0; j < col; j++ )
+	for (int i = 0; i < row; i++)
+		for (int j = 0; j < col; j++)
 			map[i][j] = ' ';
 }
-void print_function( char map[][200], int col, int row )
+void print_function(char map[][200], int col, int row)
 {
-	for( int i = 0; i < row; i++ )
+	for (int i = 0; i < row; i++)
 	{
-		for( int j = 0; j < col; j++ )	
-			if( map[i][j] == '#' )
+		for (int j = 0; j < col; j++)
+			if (map[i][j] == '#')
 				printf("\033[0;30;42m \033[0m");
-			else if( map[i][j] == '@')
+			else if (map[i][j] == '@')
 				printf("\033[0;30;103m \033[0m");
-			else if( (map[i][j] == '!' || (map[i][j]<= 90 && map[i][j] >= 65) || (map[i][j] >= 97 && map[i][j] <= 122)) && i >= 7){
+			else if ((map[i][j] == '!' || (map[i][j] <= 90 && map[i][j] >= 65) || (map[i][j] >= 97 && map[i][j] <= 122)) && i >= 7)
+			{
 				printf("\033[1;37;41m%c\033[0m", map[i][j]);
 			}
-			else 
-				printf("\033[47m%c\033[0m", map[i][j] );
+			else
+				printf("\033[47m%c\033[0m", map[i][j]);
 		std::cout << std::endl;
 	}
 }
