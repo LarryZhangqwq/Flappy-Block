@@ -19,18 +19,20 @@ void move_char(char map[][200], int row, int col)
 			{
 				map[i][j] = map[i][j + 1];
 			}
-			else if (map[i][j] != '#' && map[i][j] != ' ')
+			else if (map[i][j] != '#' && map[i][j] != ' ' && map[i][j] != '$')
 			{
 				map[i][j] = map[i][j];
 			}
 			else if (map[i][j + 1] == ' ')
 				map[i][j] = ' ';
+			else if(map[i][j+1] == '$')
+				map[i][j] = map[i][j+1];
 }
 
 void init(char map[][200], int row, int col)
 {
-	for (int i = 0; i < row; i++)
-		for (int j = 0; j < col; j++)
+	for (int i = 0; i < 200; i++)
+		for (int j = 0; j < 200; j++)
 			map[i][j] = ' ';
 }
 void print_function(char map[][200], int col, int row)
@@ -45,6 +47,12 @@ void print_function(char map[][200], int col, int row)
 			else if ((map[i][j] == '!' || (map[i][j] <= 90 && map[i][j] >= 65) || (map[i][j] >= 97 && map[i][j] <= 122)) && i >= 7)
 			{
 				printf("\033[1;37;41m%c\033[0m", map[i][j]);
+			}
+			else if (map[i][j] == '^'){
+				printf("\033[0;30;105m \033[0m");
+			}
+			else if (map[i][j] == '$'){
+				printf("\033[0;30;40m \033[0m");
 			}
 			else
 				printf("\033[47m%c\033[0m", map[i][j]);
