@@ -131,7 +131,7 @@ string start_and_end(int row, int col, int now_score, int ranking, int type, str
 		for( int i = 0; i < col / 2 - 23; i++ )
 			printf("\033[1;37;40m \033[0m");
 		printf("\033[1;37;40mYour name: %s\033[0m", Name.c_str());
-		for( int i = 0; i < col / 2 - 17 - Name.length(); i++ )
+		for( int i = 0; i < 23 - Name.length(); i++ )
 			printf("\033[1;37;40m \033[0m");
 		cout << endl;
 		//cout << "Your name: " << Name << endl;
@@ -140,7 +140,7 @@ string start_and_end(int row, int col, int now_score, int ranking, int type, str
 		for( int i = 0; i < col / 2 - 23; i++ )
 			printf("\033[1;37;40m \033[0m");
 		printf("\033[1;37;40mYour score: %d\033[0m", now_score);
-		for( int i = 0; i < col / 2 - 18 -score_length; i++ )
+		for( int i = 0; i < 22 -score_length; i++ )
 			printf("\033[1;37;40m \033[0m");
 		cout << endl;
 		//cout << "Your score: " << now_score << endl;
@@ -148,8 +148,8 @@ string start_and_end(int row, int col, int now_score, int ranking, int type, str
 			cout << " ";
 		for( int i = 0; i < col / 2 - 23; i++ )
 			printf("\033[1;37;40m \033[0m");
-		printf("\033[1;37;40mYour score: %d\033[0m", ranking);
-		for( int i = 0; i < col / 2 - 18 -rank_length; i++ )
+		printf("\033[1;37;40mYour ranking: %d\033[0m", ranking);
+		for( int i = 0; i < 20 -rank_length; i++ )
 			printf("\033[1;37;40m \033[0m");
 		cout << endl;
 		//cout << "Your ranking: " << ranking << endl;
