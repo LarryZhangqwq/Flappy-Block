@@ -11,37 +11,37 @@ Here are some introductions about our game:popcorn: Hope you can enjoy it! :beer
 
 One day :cityscape: , a dog named  BAILEY :poodle: was caught in a factory:factory: and packed into a magical cardboard box:package: . It is pretty difficult for him to escape from the box, so he decides to use the magic of this box to run this strange factory.
 
-**1. 1: Strange factory:**
+**1.1: Strange factory:**
 
 * There are countless **moving walls** in this factory. They are called "obstacles". Fortunately, **each wall has a gap**, but the **position of the hole is random**. Over time, the factory automatically controls the wall to speed up. Players need to **control the jumping trajectory of the carton** to make the carton **through these gaps**. **Note that anything that touches any wall will be grabbed back to the starting point.**:beers:
 
 * Here is a possible situation:
 
-  Players should control the box by using the magic of the box to pass through the gaps in the walls from left to right.
+  Players should control the box by using 'space' to pass through the gaps in the walls from left to right. **Whether it hits obstacles or the upper and lower boundaries will die.**
 
-  ———————————————>
+  ![1](image/1.png)
 
-  :no_entry: :white_check_mark: :no_entry: :white_check_mark: :white_check_mark: :white_check_mark: :no_entry:......
+**1.2: Magic time:**
 
-  :no_entry: :white_check_mark: :white_check_mark: :white_check_mark: :no_entry: :white_check_mark: :no_entry:......
+* Feel difficult? Magic time will help you!!! During the Magic time, all obstacles will disappear :P
 
-  :package: :white_check_mark: :no_entry: :white_check_mark: :no_entry: :white_check_mark: :white_check_mark:......
+* Here is something about it you have to know:
+  1. Press **'s'** during the game to use it
+  2. The effect will only **last for a few seconds**
+  3. The number of times you can use will be reduced by 1 each time you use it, and your remaining times can be viewed in the "Magic numbers" in the upper right corner of the game. Every once in a while you will get an extra chance
 
-  :no_entry: :white_check_mark: :no_entry: :white_check_mark: :no_entry: :white_check_mark: :no_entry:......             
+**1.3: Black box:**
 
-  ———————————————>
-	
-	:no_entry: means the walls.
-	
-	:white_check_mark:: means the region that the box could stay.
+* A black box is a weird thing, if you touch it or pass around it, **your gravitational field will reverse!!**
 
-**1. 2: Magic of the box:**
+* Here is something about it you have to know:
 
-1. **Jump in the air**: Allow BAILEY to jump in the air. After air jump, the box will **raise by half a meter**.
+  1. It will be **randomly generated** in the map. no fixed time and no fixed place :(
+  2. Gravity field reversal means that if you do nothing, the block **"free-falls" upwards**, and only **"jumps" downwards when you press space**.
+  3. If you accidentally touch it, don't worry, its effect will **only last for a few seconds**, after a few seconds, your gravity field will return to normal. : )
+  4. If your gravity field is reversed, the color of the block will change from yellow to rose red (pictured below). After a few seconds, your color will change back to yellow and the gravity field will return to normal
 
-   **Note:** This magic box hasn't solved gravity yet so the package will **fall freely** under the force of gravity.
-
-   
+  ![2](image/2.png)
 
 ## 2. A list of features that we plan to implement
 
@@ -54,3 +54,20 @@ One day :cityscape: , a dog named  BAILEY :poodle: was caught in a factory:facto
 7. Use dynamic memory to set up a ranking list(unknown length) for the history of scores. ( Requirement 3 covered )
 8. Use file input to use the random wall position which is stored in another file; use file output to output the score to the ranking file for ranking. ( Requirement 4 covered )
 
+
+
+## 3. How to Start
+
+To start the game:
+
+````
+make clean
+make main
+./make
+````
+
+ 
+
+
+
+**Hope you can enjoy it!!!!**
