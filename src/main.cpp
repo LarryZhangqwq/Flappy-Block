@@ -39,6 +39,7 @@ int main()
 			timer1 = 0;
 			during_skill = 0;
 			Wall_clean(map, row, col);
+			skill_end(row, col);
 		}
 		if (during_skill == 0)
 		refresh_scoreboard(map, now_score, name, best_score, row, col, skill);
@@ -88,10 +89,10 @@ int main()
 				}
 				during_skill = 1;
 				skill--;
-				skill_transition(row, col);
+				skill_start(row, col);
 			}
 		}
-		countmarks(map, row, col, now_score, count2);
+		countmarks(map, row, col, now_score, count2, count);
 		print_function(map, col, row);
 		usleep(200000);
 		printf("\033[2J\033[1;1H");

@@ -100,7 +100,7 @@ string start_and_end(int row, int col, int now_score, int ranking, int type, str
 	}
 // -------- End ----------------
 }
-void skill_transition(int row, int col){
+void skill_start(int row, int col){
 	int start_pos = col /2 - 36;
 	for (int i = 0; i < row/2-2; i++){
 		cout << endl;
@@ -160,7 +160,7 @@ void skill_transition(int row, int col){
 	for (int i = 0; i < start_pos; i++){
 		cout << ' ';
 	}
-    string line5 = "##      ## ##   ##  ######   ##   ######      ##   #### ##      ## ######";
+    string line5 = "##      ## ##   ##  ######  ####  ######      ##   #### ##      ## ######";
 	for (int i = 0; i < 73; i ++){
 		if (line5[i] == '#'){
 			printf("\033[0;30;41m \033[0m");
@@ -170,6 +170,80 @@ void skill_transition(int row, int col){
 		}
 	}
 	cout << endl;
-        usleep(2000000);
+        usleep(1000000);
 		printf("\033[2J\033[1;1H");
+}
+void skill_end(int row, int col){
+	string line1 = "###    ###  #####   ######  ####  ######      ###### ##    ## #######    ";
+	string line2 = "####  #### ##   ## ##        ##  ##           ##     ###   ## ##     ##  ";
+	string line3 = "## #### ## ####### ##   ###  ##  ##           ####   ## ## ## ##      ## ";
+	string line4 = "##  ##  ## ##   ## ##    ##  ##  ##           ##     ##   ### ##     ##  ";
+	string line5 = "##      ## ##   ##  ######  ####  ######      ###### ##    ## #######    ";
+	int start_pos = col /2 - 36;
+	for (int i = 0; i < row/2-2; i++){
+		cout << endl;
+	}
+	for (int i = 0; i < start_pos; i++){
+		cout << ' ';
+	}
+	
+	for (int i = 0; i < 73; i ++){
+		if (line1[i] == '#'){
+			printf("\033[0;30;41m \033[0m");
+		}
+		else{
+			cout << ' ';
+		}
+	}
+	cout << endl;
+	for (int i = 0; i < start_pos; i++){
+		cout << ' ';
+	}
+	for (int i = 0; i < 73; i ++){
+		if (line2[i] == '#'){
+			printf("\033[0;30;41m \033[0m");
+		}
+		else{
+			cout << ' ';
+		}
+	}
+	cout << endl;
+	for (int i = 0; i < start_pos; i++){
+		cout << ' ';
+	}
+	for (int i = 0; i < 73; i ++){
+		if (line3[i] == '#'){
+			printf("\033[0;30;41m \033[0m");
+		}
+		else{
+			cout << ' ';
+		}
+	}
+	cout << endl;	
+	for (int i = 0; i < start_pos; i++){
+		cout << ' ';
+	}
+	for (int i = 0; i < 73; i ++){
+		if (line4[i] == '#'){
+			printf("\033[0;30;41m \033[0m");
+		}
+		else{
+			cout << ' ';
+		}
+	}
+	cout << endl;		
+	for (int i = 0; i < start_pos; i++){
+		cout << ' ';
+	}
+	for (int i = 0; i < 73; i ++){
+		if (line5[i] == '#'){
+			printf("\033[0;30;41m \033[0m");
+		}
+		else{
+			cout << ' ';
+		}
+	}
+	cout << endl;
+    usleep(1000000);
+	printf("\033[2J\033[1;1H");
 }

@@ -1,19 +1,10 @@
 #include <iostream>
 #include "Count_marks.h"
 using namespace std;
-void countmarks(char board[][200], int row, int col, int& marks, int& count2){
-    bool judge1 = 0;
-    bool judge2 = 1;
-    for (int i = 0; i < row; i++){
-        if (board[i][9] == '#'){
-            judge1 = 1;
-        }
-        if (board[i][10] == '#'){
-            judge2 = 0;
-        }
-    }
-    if (judge1 && judge2){
+void countmarks(char board[][200], int row, int col, int& marks, int& count2, int & count){
+    if (count >= 15){
         marks += 1;
         count2 += 1;
+        count -= 15;
     }
 }
