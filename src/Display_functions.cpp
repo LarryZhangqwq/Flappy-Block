@@ -42,6 +42,9 @@ void print_function( char map[][200], int col, int row )
 				printf("\033[0;30;42m \033[0m");
 			else if( map[i][j] == '@')
 				printf("\033[0;30;103m \033[0m");
+			else if( (map[i][j] == '!' || (map[i][j]<= 90 && map[i][j] >= 65) || (map[i][j] >= 97 && map[i][j] <= 122)) && i >= 7){
+				printf("\033[1;37;41m%c\033[0m", map[i][j]);
+			}
 			else 
 				printf("\033[47m%c\033[0m", map[i][j] );
 		std::cout << std::endl;
