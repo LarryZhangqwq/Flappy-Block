@@ -160,7 +160,6 @@ void skill_transition(int row, int col){
 	for (int i = 0; i < start_pos; i++){
 		cout << ' ';
 	}
-  //string line5 = "##  ##  ## ##   ## ##    ##  ##  ##           ##    ##  ##  ##  ## ##    ";
     string line5 = "##      ## ##   ##  ######   ##   ######      ##   #### ##      ## ######";
 	for (int i = 0; i < 73; i ++){
 		if (line5[i] == '#'){
@@ -171,6 +170,6 @@ void skill_transition(int row, int col){
 		}
 	}
 	cout << endl;
-        usleep(3000000);
+        usleep(2000000);
 		printf("\033[2J\033[1;1H");
 }
