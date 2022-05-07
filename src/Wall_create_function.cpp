@@ -58,7 +58,7 @@ void converter_create(char map[][200], int row, int col, int pre_high){
 	srand(time(0));
 	int create_col;
 	int create_row;
-	create_col = col-12+rand()%5;
+	create_col = col+rand()%5;
 	create_row = pre_high + rand()%5;
 	while (map[create_row][create_col] == '#'){
 		create_col = col+rand()%5;
