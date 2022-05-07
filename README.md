@@ -63,7 +63,7 @@ To start the game:
 ````
 make clean
 make main
-./make
+./main
 ````
 
  
