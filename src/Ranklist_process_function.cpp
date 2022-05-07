@@ -4,7 +4,7 @@
 #include"Ranklist_process_function.h"
 using namespace std;
 
-int ranklist_process( int score, int type )
+int ranklist_process( int score, int type )// used to store the scores into the ranklist.txt or get the best score.
 {
 	int ans = -1;
 	if( type == 0 ) //get best score only

@@ -61,7 +61,7 @@ int main()
 			wall_height = Wall_create_function(map, wall_height, col, row);
 		if (during_converter == 0 && count3 % 50 == 0 && during_skill == 0)
 			converter_create(map, row, col, wall_height);
-		if (during_converter == 0)
+		if (during_converter == 0)// not in inversed gravity field
 		{
 			if (!kbhit())
 			{
@@ -84,7 +84,7 @@ int main()
 					map[box_pos][10] = '@';
 				}
 			}
-			else
+			else// in inversed gravity field
 			{
 				char t;
 				t = get_keyboard();

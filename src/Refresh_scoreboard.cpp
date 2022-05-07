@@ -3,10 +3,10 @@
 #include <cmath>
 #include "Refresh_scoreboard.h"
 using namespace std;
-
+//used to make the scoreboard at the top of terminal
 void refresh_scoreboard(char map[][200], int Now_score, string Name, int Best_score, int row, int col, int skill)
 {
-    // 初始化，在整合之后可以删除
+    // initializing
     for (int i = 0; i < row; i++)
     {
         for (int j = 0; j < col; j++)
@@ -17,7 +17,7 @@ void refresh_scoreboard(char map[][200], int Now_score, string Name, int Best_sc
                 map[i][j] = '|';
         }
     }
-    // 初始化结束
+    // end the initializing
     char BS[15] = "Best Score: ";
     char CS[21] = "Current Score: ";
     char Na[15] = "Your Name: ";
