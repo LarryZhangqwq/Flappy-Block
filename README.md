@@ -60,6 +60,8 @@ One day :cityscape: , a dog named  BAILEY :poodle: was caught in a factory:facto
 
 To start the game:
 
+* Compiled in academy11
+
 ````
 make clean
 make main
