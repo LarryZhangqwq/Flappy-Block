@@ -38,8 +38,8 @@ void print_function( char map[][200], int col, int row )
 				printf("\033[0;30;42m \033[0m");
 			else if( map[i][j] == '@')
 				printf("\033[0;30;103m \033[0m");
-			else
-				std::cout << map[i][j];
+			else 
+				printf("\033[47m%c\033[0m", map[i][j] );
 		std::cout << std::endl;
 	}
 }

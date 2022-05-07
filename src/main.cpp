@@ -3,10 +3,10 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
-#include "../lib/conio.h"
 #include <unistd.h>
 #include <sys/ioctl.h>
 #include <termios.h>
+#include "../lib/conio.h"
 #include "Count_marks.h"
 #include "Wall_create_function.h"
 #include "Ranklist_process_function.h"
@@ -65,7 +65,7 @@ int main()
 			t = get_keyboard();
 			if (t == ' ')
 			{
-				if (box_pos <= 7 || map[box_pos - 2][10] == '#')
+				if ( box_pos <= 7 || map[box_pos - 2][10] == '#' )
 				{
 					ranking = ranklist_process(now_score, 1);
 					temp = start_and_end(row, col, now_score, ranking, 0, name);

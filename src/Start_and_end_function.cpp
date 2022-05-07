@@ -17,11 +17,13 @@ string start_and_end(int row, int col, int now_score, int ranking, int type, str
 // -------- Start display ------
 	if( type == 1 )
 	{
+		
 		for( int i = 0; i < row / 6; i++ )
 			cout << endl;
 		for( int i = 0; i < col / 2 - 27; i++ )
 			cout << " ";
-		cout << " _____ _                         ____  _             _   _" << endl;
+		printf("\033[42m _____ _                         ____  _             _   _  \033[0m\n" );
+//		cout << " _____ _                         ____  _             _   _" << endl;
 		for( int i = 0; i < col / 2 - 27; i++ )
 			cout << " "; 
 		cout << "|  ___| | __ _ _ __  _ __  _   _| __ )| |  ___   ___| | / /" << endl;
