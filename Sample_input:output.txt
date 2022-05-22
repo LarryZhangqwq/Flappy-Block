@@ -1,8 +1,0 @@
-Before the game starts, you need to enter a name
-
-During game:
-space -> Press the space to control the jump of the block
-'s' ---> press s is used to activate the "magic time" skill
-
-after the game over:
-Press any key to exit
