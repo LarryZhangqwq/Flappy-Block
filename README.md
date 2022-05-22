@@ -60,7 +60,7 @@ One day :cityscape: , a dog named  BAILEY :poodle: was caught in a factory:facto
 
 To start the game:
 
-* Compiled in academy11
+* Compiled on Ubuntu Linux 18.04(maybe)
 * Quick start: ``./main``
 * If there are some warning, try to: (There will be several errors during compilation, please ignore it, it will not affect the compilation result)
 
