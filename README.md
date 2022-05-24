@@ -75,6 +75,9 @@ make main
 ## 4. Other things
 
 * we used a non-standard C/C++ libraries named "conio". We use it to determine whether there is data in the buffer, in other words, whether we have input.
-* 
+
+## 5. Introduction video
+
+[output.mp4](https://connecthkuhk-my.sharepoint.com/:v:/g/personal/u3594786_connect_hku_hk/EVA_i-B8g5hKo0-8WmtmWF8BAWwDyIdBnFmYlM_2G_LWcA?e=XYMsT6)
 
 **Hope you can enjoy it!!!!**
